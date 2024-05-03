@@ -1,0 +1,311 @@
+
+---------------------------------------------------------------------------------------------
+				**UNIX USER COMMANDS**			
+---------------------------------------------------------------------------------------------
+1.COMMAND TO SHOW YOUR USERNAME: whoami
+$ whoami
+rgukt-basar
+______________________________________________________________________________________________
+2.COMMAND TO PRINT USER IDENTITY: id
+$ id
+uid=1000(rgukt-basar) gid=1000(rgukt-basar) groups=1000(rgukt-basar),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),122(lpadmin),134(lxd),135(sambashare)
+______________________________________________________________________________________________
+3.COMMAND TO SHOW WHICH GROUPS USER BELONGS TO: groups
+$ groups
+rgukt-basar adm cdrom sudo dip plugdev lpadmin lxd sambashare
+______________________________________________________________________________________________
+4.COMMAND TO CHANGE USER PASSWORD: passwd
+$ passwd
+Changing password for rgukt-basar.
+Current password: 
+New password: 
+______________________________________________________________________________________________
+5.COMMAND TO FIND OUT WHO IS LOGGED INTO THE SYSTEM: who
+~$ who
+rgukt-basar tty2         2024-04-04 11:27 (tty2)
+~$ last
+rgukt-ba tty2         tty2             Tue Sep 26 20:36 - down   (02:59)
+reboot   system boot  5.15.0-43-generi Tue Sep 26 20:36 - 23:36  (03:00)
+rgukt-ba tty2         tty2             Tue Sep 26 13:20 - down   (06:14)
+reboot   system boot  5.15.0-43-generi Tue Sep 26 13:20 - 19:34  (06:14)
+rgukt-ba tty2         tty2             Tue Sep 26 09:42 - down   (02:38)
+reboot   system boot  5.15.0-43-generi Tue Sep 26 09:41 - 12:20  (02:38)
+rgukt-ba tty2         tty2             Tue Sep 26 03:31 - down   (-3:33)
+reboot   system boot  5.15.0-43-generi Tue Sep 26 03:30 - 23:57  (-3:33)
+rgukt-ba tty2         tty2             Tue Sep 26 02:49 - down   (00:01)
+reboot   system boot  5.15.0-43-generi Tue Sep 26 02:48 - 02:50  (00:01)
+rgukt-ba tty2         tty2             Mon Sep 25 18:01 - down   (00:02)
+reboot   system boot  5.15.0-43-generi Mon Sep 25 18:00 - 18:04  (00:03)
+rgukt-ba tty2         tty2             Thu Jan  5 16:21 - down   (-3:25)
+reboot   system boot  5.15.0-43-generi Thu Jan  5 16:21 - 12:56  (-3:25)
+
+wtmp begins Thu Jan  5 16:21:35 2023
+
+
+---------------------------------------------------------------------------------------------			
+			     **UNIX FILE OPERATIONS**
+---------------------------------------------------------------------------------------------
+1.COMMAND TO KNOW SERVER ADDRESS: nslookup google.com
+$ nslookup google.com
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+** server can't find google.com: SERVFAIL
+_____________________________________________________________________________________________
+2.COMMAND TO CREATE FILES OR UPDATE ITS TIMESTAMP: touch 
+$ touch file1.txt
+_____________________________________________________________________________________________
+3.COMMAND TO CONCATENATE FILES AND PRINT TO STDOUT: cat
+$ cat >file2.txt
+welcome to IT Workshop
+we are learning unix file operations
+_____________________________________________________________________________________________
+4.COMMAND TO COPY FILES: cp
+$ cp file2.txt file1.txt
+_____________________________________________________________________________________________
+5.COMMAND TO REMOVE FILES: rm
+$ rm file1.txt
+_____________________________________________________________________________________________
+6.COMMAND TO MAKE NEW DIRECTORY: mkdir
+$ mkdir f
+_____________________________________________________________________________________________
+7.COMMAND TO REMOVE DIRECTORY: rmdir
+$ rmdir f
+_____________________________________________________________________________________________
+8.COMMAND TO CHANGE DIRECTORY: cd
+$ cd Downloads
+_____________________________________________________________________________________________
+9.COMMAND TO CONFIRM CURRENT DIRECTORY: pwd
+~/Downloads$ pwd
+/home/rgukt-basar/Downloads
+_____________________________________________________________________________________________
+10.COMMAND TO LIST ALL THE DIRECTORY CONTENTS: ls
+~/Downloads$ ls
+ code_1.85.1-1702462158_amd64 (1).deb'
+ code_1.85.1-1702462158_amd64.deb
+ IMG20230917132430.jpg
+ IMG20231021170034.jpg
+ IMG_20231029_202615.jpg
+ ideaIC-2023.3.2.tar.gz
+ v.jpg
+ 'wave (1).svg'
+
+_____________________________________________________________________________________________
+11.COMMAND USED AS INTERFACE FOR WORKING WITH THE ONLINE REFERENCE MANUALS: man touch
+~/Downloads$ man touch
+
+ TOUCH(1)                                                 User Commands                                                 TOUCH(1)
+
+NAME
+       touch - change file timestamps
+
+SYNOPSIS
+       touch [OPTION]... FILE...
+
+DESCRIPTION
+       Update the access and modification times of each FILE to the current time.
+
+       A FILE argument that does not exist is created empty, unless -c or -h is supplied.
+
+       A  FILE argument string of - is handled specially and causes touch to change the times of the file associated with stan‐
+       dard output.
+
+       Mandatory arguments to long options are mandatory for short options too.
+
+       -a     change only the access time
+
+       -c, --no-create
+              do not create any files
+
+       -d, --date=STRING
+              parse STRING and use it instead of current time
+
+       -f     (ignored)
+
+       -h, --no-dereference
+              affect each symbolic link instead of any referenced file (useful only on systems that can change  the  timestamps
+              of a symlink)
+
+       -m     change only the modification time
+ Manual page touch(1) line 1/75 38% (press h for help or q to quit)
+
+ -r, --reference=FILE
+              use this file's times instead of current time
+
+       -t STAMP
+              use [[CC]YY]MMDDhhmm[.ss] instead of current time
+
+       --time=WORD
+              change the specified time: WORD is access, atime, or use: equivalent to -a WORD is modify or mtime: equivalent to
+              -m
+
+       --help display this help and exit
+
+       --version
+              output version information and exit
+
+       Note that the -d and -t options accept different time-date formats.
+
+DATE STRING
+       The --date=STRING is a mostly free format human readable date string such as  "Sun,  29  Feb  2004  16:21:42  -0800"  or
+       "2004-02-29  16:21:42"  or even "next Thursday".  A date string may contain items indicating calendar date, time of day,
+       time zone, day of week, relative time, relative date, and numbers.  An empty string indicates the beginning of the  day.
+       The date string format is more complex than is easily documented here but is fully described in the info documentation.
+
+AUTHOR
+       Written by Paul Rubin, Arnold Robbins, Jim Kingdon, David MacKenzie, and Randy Smith.
+
+REPORTING BUGS
+       GNU coreutils online help: <https:**www.gnu.org/software/coreutils/>
+       Report touch translation bugs to <https:**translationproject.org/team/>
+
+ Manual page touch(1) line 32/75 82% (press h for help or q to quit)
+_____________________________________________________________________________________________
+12.COMMAND TO ESTIMATE DISK USAGE IS BLOCKS: du
+~/Downloads$ du
+24	./com/mysql/cj/callback
+72	./com/mysql/cj/conf/url
+
+~/Downloads$ df -l
+Filesystem     1K-blocks     Used Available Use% Mounted on
+tmpfs             789748     2152    787596   1% /run
+/dev/nvme0n1p2 244506940 68568456 163445428  30% /
+tmpfs            3948740        0   3948740   0% /dev/shm
+tmpfs               5120        4      5116   1% /run/lock
+/dev/nvme0n1p1    523248     6224    517024   2% /boot/efi
+tmpfs             789748      104    789644   1% /run/user/1000
+
+_____________________________________________________________________________________________
+13.COMMAND TO DISPLAYS THE CALENDAR: cal
+Downloads$ cal 1 2024
+    January 2024      
+Su Mo Tu We Th Fr Sa  
+    1  2  3  4  5  6  
+ 7  8  9 10 11 12 13  
+14 15 16 17 18 19 20  
+21 22 23 24 25 26 27  
+28 29 30 31           
+_____________________________________________________________________________________________                     
+14.COMMAND TO DISPLAYS THE SYSTEM DATE AND TIME: date
+~/Downloads$ date
+Thursday 04 April 2024 11:50:34 AM IST
+_____________________________________________________________________________________________
+15.COMMAND TO LOCATE A COMMAND: which
+~/Downloads$ which -a cat
+/usr/bin/cat
+/bin/cat
+_____________________________________________________________________________________________ 
+16.COMMAND TO SHOW THE NUMBER OF FREE BLOCKS FOR THE MOUNTED FILE SYSTEM: df
+~/Downloads$ df
+Filesystem     1K-blocks     Used Available Use% Mounted on
+tmpfs             789748     2152    787596   1% /run
+/dev/nvme0n1p2 244506940 68568456 163445428  30% /
+tmpfs            3948740        0   3948740   0% /dev/shm
+tmpfs               5120        4      5116   1% /run/lock
+/dev/nvme0n1p1    523248     6224    517024   2% /boot/efi
+tmpfs             789748      104    789644   1% /run/user/1000
+____________________________________________________________________________________________
+17.COMMAND TO EXECUTE A COMMAND AS SOME OTHER USER OR SUPER-USER: sudo ls
+~/Downloads$ sudo ls
+[sudo] password for rgukt-basar: 
+ a.out	     file2		     Music	    snap
+ cbs	     first.tex		    'my programs'   Templates
+ COA	     htmlprograms	     MyProject	    Videos
+ daa.c	     idea-IC-233.13135.103   Pictures	    w1
+ Desktop     it			     projects	    w2
+ dir1	     ita		     Public	   'web development'
+ Documents  'IT Workshop'	    'py install'    WEEK-1
+ Downloads   javaPrograms	     RGUKT	    wt
+ f1.txt      jdk-21.0.1+12	     shraddha	   'wt sql' ____________________________________________________________________________________________
+
+18.COMMAND To MOVE FILES OR RENAME FILES: mv 
+$ mv file1 file2
+_____________________________________________________________________________________________
+19.COMMAND TO DISPLAYS A SNAPSHOT OF ALL CURRENT PROCESSES: ps
+$ ps -ef
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  0 07:56 ?        00:00:00 /sbin/init splash
+root           2       0  0 07:56 ?        00:00:00 [kthreadd]
+root           3       2  0 07:56 ?        00:00:00 [rcu_gp]
+root           4       2  0 07:56 ?        00:00:00 [rcu_par_gp]
+root           5       2  0 07:56 ?        00:00:00 [slub_flushwq]
+root           6       2  0 07:56 ?        00:00:00 [netns]
+root           8       2  0 07:56 ?        00:00:00 [kworker/0:0H-events_h
+root          10       2  0 07:56 ?        00:00:00 [mm_percpu_wq]
+
+_____________________________________________________________________________________________
+20.COMMAND TO DISPLAYS A LIVE STATUS OF CURRENT PROCESSES: top
+$ top
+top - 12:36:09 up  1:08,  1 user,  load average: 0.20, 0.33, 0.36
+Tasks: 220 total,   1 running, 219 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.8 us,  0.9 sy,  0.0 ni, 98.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7730.0 total,   4515.6 free,   1321.3 used,   1893.2 buff/cache
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.   5789.1 avail Mem 
+
+---------------------------------------------------------------------------------------------
+
+//How to Create a File?
+$ touch file1 file2
+____________________________________________________________________________________________
+
+
+//How to view the list of Commands executed?
+$ history
+ 1234  which -a cat
+ 1235  man cat
+ 1236  who
+ 1237  mkdir file
+ 1238  history
+ 1239  who
+ 1240  whoami
+ 1241  ls
+ 1242  cd
+ 1243  touch file1 file2
+ 1244  cp file1 file2
+ 1245  rm file1
+ 1246  rmdir file
+ 1247  date[+format]
+ 1248  date +%d/%m/%y
+ 1249  cat file2
+ 1250  touch RGUKT
+ 1251  cat RGUKT
+ 1252  history
+____________________________________________________________________________________________
+
+//How to view your username in Unix?
+$ whoami
+rgukt-basar
+____________________________________________________________________________________________
+
+
+//List some of the common and most widely used UNIX commands.
+
+->whoami
+->touch
+->cd
+->who
+->ls
+->cat
+->groups
+->rm
+->mkdir 
+->rmdir
+____________________________________________________________________________________________
+
+
+//How to Remove files using unix commands?
+$ rm file1
+$ rmdir file
+____________________________________________________________________________________________
+
+
+//Create a RGUKT new file
+$ touch RGUKT
+
+____________________________________________________________________________________________
+
+
+
+
+
+
